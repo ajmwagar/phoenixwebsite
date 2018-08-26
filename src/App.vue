@@ -19,7 +19,7 @@
         <div class="row">
           <div class="five columns centertext">
             <h1>This is Phoenix</h1>
-            <button class="sp-btn" onclick="window.location.href='https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot'"> Invite Me!</button>
+            <button class="sp-btn" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot')"> Invite Me!</button>
           </div>
           <div class="seven columns">
             <p style="padding-top: 32px;">
@@ -28,50 +28,15 @@
             <hr>
             <p>
               Phoenix was created by <a href="http://www.averywagar.com/">Avery Wagar</a> and <a href="https://nlaha.com">Nathan Laha</a><br><br>
-              <button class="sp-btn-s" onclick="window.location.href='https://github.com/ajmwagar/discordbot'">Source Code</button>
+              <button class="sp-btn-s" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button>
+              <button class="sp-btn-s" onclick="window.location.href='/#commands'">Commands</button>
             </p>
           </div>
         </div>
       </div>
     </div>
-    <button class="closebtn" v-on:click="isClosed = !isClosed" ><i class="material-icons">keyboard_arrow_down</i></button>
-    <footer class="mainfooter" v-bind:class="{ closed: isClosed }">
-      <button class="sp-btn-s" v-on:click="dshow = !dshow" v-bind:class="{ closed: isClosed }">Dashboard</button>
-    </footer>
+    <Footer/>
     <!-- Main Landing Page content ends here -->
-
-    </div>
-    <div v-if="!dshow">
-
-      <!-- Dashboard -->
-      <div class="container">
-            <div class="row">
-                <div class="column">
-                  <h1 class="landing-title text-pop-up-top">Phoenix</h1>
-                </div>
-            </div>
-          </div>
-          <div class="content">
-            <div class="container slide-in-elliptic-top-fwd">
-              <div class="row">
-                <div class="five columns centertext">
-                  <h1>Phoenix Server Dashboard</h1>
-                  <button class="sp-btn">Login</button>
-                </div>
-                <div class="seven columns">
-                  <p style="padding-top: 32px;">
-                  Please login with your discord account to continue.
-                  With the dashboard, you can access many functions that will make administering your server easier!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="closebtn" v-on:click="isClosed = !isClosed" ><i class="material-icons">keyboard_arrow_down</i></button>
-          <footer class="mainfooter" v-bind:class="{ closed: isClosed }">
-            <button class="sp-btn-s" v-on:click="dshow = !dshow" v-bind:class="{ closed: isClosed }">Dashboard</button>
-          </footer>
-      <!-- End Dashboard -->
 
     </div>
     </transition>
@@ -82,6 +47,9 @@
 </template>
 
 <script>
+import Footer from './components/footer.vue';
+
+
 // paralax background
 (function() {
   var parallax = document.querySelectorAll("body"),
@@ -104,6 +72,7 @@
 // vue stuff
 export default {
   name: "app",
+  components: { Footer },
   data() {
     return {
       isClosed: false,
@@ -119,3 +88,8 @@ export default {
 };
 </script>
 
+<style scoped>
+.container{
+   height: 100vh;
+}
+</style>
