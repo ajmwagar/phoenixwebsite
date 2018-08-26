@@ -8,14 +8,49 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Oswald');
 body {
     background-image: url("images/bg.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
 }
 
+h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
 p {
     font-family: 'Archivo Narrow', sans-serif;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 5px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mainfooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #c55b2a;
+    color: white;
+    text-align: center;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 1s;
 }
 
 /* Begin Landing Title */
@@ -96,6 +131,7 @@ p {
     background-color: rgb(223, 223, 223);
     font-size: 2.5rem;
     padding-top: 170px;
+    padding-bottom: 170px;
 }
 
 .sp-btn {
@@ -110,22 +146,104 @@ p {
     font-family: 'Archivo Narrow', sans-serif;
     transition: 0.2s;
     border-radius: 2px;
-    box-shadow: 0px 10px 0px #c52a2a;
+    box-shadow: 0px 10px 0px #c55b2a;
 }
 
 .sp-btn:hover {
     background-color: #d6b4a4;
-    color: #722424;
+    color: rgb(122, 54, 54);
     transition: 0.2s;
 }
 
 .sp-btn:active {
     background-color: #ffffff;
     transform: translateY(10px);
-    box-shadow: 0px 0px 0px #c52a2a;
+    box-shadow: 0px 0px 0px #c55b2a;
     transition: 0.1s;
+}
+
+.sp-btn-s {
+    background-color: #d6b4a4;
+    color: #722424;
+    font-size: 30px;
+    padding-top: 1px;
+    padding-bottom: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border: none;
+    font-family: 'Archivo Narrow', sans-serif;
+    transition: 0.2s;
+    border-radius: 2px;
+    box-shadow: 0px 10px 0px #944520;
+}
+
+.sp-btn-s:hover {
+    background-color: #d6b4a4;
+    color: rgb(122, 54, 54);
+    transition: 0.2s;
+}
+
+.sp-btn-s:active {
+    background-color: #ffffff;
+    transform: translateY(10px);
+    box-shadow: 0px 0px 0px #944520;
+    transition: 0.1s;
+}
+
+.closebtn {
+    background-color: #d6b4a4;
+    color: #722424;
+    font-size: 33px;
+    padding-top: 1px;
+    padding-bottom: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border: none;
+    font-family: 'Archivo Narrow', sans-serif;
+    transition: 0.2s;
+    border-radius: 2px;
+    box-shadow: 0px 10px 0px #944520;
+    float: right;
+    margin-right: 50px;
+    position: fixed;
+    right: 0;
+    bottom: 22px;
+    z-index: 1;
+}
+
+.closebtn:hover {
+    background-color: #d6b4a4;
+    color: rgb(122, 54, 54);
+    transition: 0.2s;
+}
+
+.closebtn:active {
+    background-color: #ffffff;
+    transform: translateY(10px);
+    box-shadow: 0px 0px 0px #944520;
+    transition: 0.1s;
+}
+
+@media screen and (min-width: 671px) {
+    button.closebtn {
+        bottom: 22px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    button.closebtn {
+        bottom: 120px;
+        margin-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 .centertext {
     text-align: center;
+}
+
+.closed {
+    transform: translateY(100px);
+    transition: 1s;
 }
