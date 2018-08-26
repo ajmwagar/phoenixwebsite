@@ -3,8 +3,10 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    
-    <!-- Main content starts here!-->
+
+    <div v-if="dshow">
+
+    <!-- Main landing Page content starts here!-->
     <div class="container">
       <div class="row">
           <div class="column">
@@ -13,7 +15,7 @@
       </div>
     </div>
     <div class="content">
-      <div class="container">
+      <div class="container slide-in-elliptic-top-fwd">
         <div class="row">
           <div class="five columns centertext">
             <h1>This is Phoenix</h1>
@@ -34,20 +36,85 @@
     </div>
     <button class="closebtn" v-on:click="isClosed = !isClosed" ><i class="material-icons">keyboard_arrow_down</i></button>
     <footer class="mainfooter" v-bind:class="{ closed: isClosed }">
-      <button class="sp-btn-s" v-bind:class="{ closed: isClosed }">Dashboard</button>
+      <button class="sp-btn-s" v-on:click="dshow = !dshow" v-bind:class="{ closed: isClosed }">Dashboard</button>
     </footer>
+    <!-- Main Landing Page content ends here -->
+
+    </div>
+    <div v-if="!dshow">
+
+      <!-- Dashboard -->
+      <div class="container">
+            <div class="row">
+                <div class="column">
+                  <h1 class="landing-title text-pop-up-top">Phoenix</h1>
+                </div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="container slide-in-elliptic-top-fwd">
+              <div class="row">
+                <div class="five columns centertext">
+                  <h1>Phoenix Server Dashboard</h1>
+                  <button class="sp-btn">Login</button>
+                </div>
+                <div class="seven columns">
+                  <p style="padding-top: 32px;">
+                  Please login with your discord account to continue.
+                  With the dashboard, you can access many functions that will make administering your server easier!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="closebtn" v-on:click="isClosed = !isClosed" ><i class="material-icons">keyboard_arrow_down</i></button>
+          <footer class="mainfooter" v-bind:class="{ closed: isClosed }">
+            <button class="sp-btn-s" v-on:click="dshow = !dshow" v-bind:class="{ closed: isClosed }">Dashboard</button>
+          </footer>
+      <!-- End Dashboard -->
+
+    </div>
+    </transition>
+
   </div>
+
 
 </template>
 
 <script>
+// paralax background
+(function() {
+  var parallax = document.querySelectorAll("body"),
+    speed = 0.5;
+  [].slice.call(parallax).forEach(function(el, i) {
+    var windowYOffset = window.pageYOffset,
+      elBackgrounPos = "50% " + windowYOffset * speed + "px";
+
+    el.style.backgroundPosition = elBackgrounPos;
+  });
+  window.onscroll = function() {
+    [].slice.call(parallax).forEach(function(el, i) {
+      var windowYOffset = window.pageYOffset,
+        elBackgrounPos = "50% " + windowYOffset * speed + "px";
+
+      el.style.backgroundPosition = elBackgrounPos;
+    });
+  };
+})();
+// vue stuff
 export default {
   name: "app",
   data() {
     return {
       isClosed: false,
+      dshow: true,
       btisClosed: false
     };
+  },
+  methods: {
+    login: function(event) {
+      // TODO auth with discord and generate dashboard
+    }
   }
 };
 </script>

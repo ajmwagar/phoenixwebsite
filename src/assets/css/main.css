@@ -8,11 +8,8 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Oswald');
 body {
     background-image: url("images/bg.jpg");
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #c55b2a;
 }
 
 h1 {
@@ -72,6 +69,7 @@ hr {
 @media screen and (max-width: 670px) {
     h1.landing-title {
         font-size: 15rem;
+        padding-bottom: 0px;
     }
 }
 
@@ -132,6 +130,7 @@ hr {
     font-size: 2.5rem;
     padding-top: 170px;
     padding-bottom: 170px;
+    min-height: 500px;
 }
 
 .sp-btn {
@@ -246,4 +245,66 @@ hr {
 .closed {
     transform: translateY(100px);
     transition: 1s;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.dcontent {
+    background-color: rgb(223, 223, 223);
+    font-size: 2.5rem;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    position: relative;
+    margin-top: 10vw;
+}
+
+.backbutton {
+    margin-right: 20px;
+}
+
+.slide-in-elliptic-top-fwd {
+    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
 }
