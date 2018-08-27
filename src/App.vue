@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
-    <div v-if="dshow">
-
     <!-- Main landing Page content starts here!-->
-    <div class="container">
+    <div class="container" style="height:50%;">
       <div class="row">
           <div class="column">
-            <h1 class="landing-title text-pop-up-top">Phoenix</h1>
+            <img 
+              src="./assets/ZoraWeb.svg" 
+              alt="ZoraBOT"
+              style="width: 100%;" />
           </div>
       </div>
     </div>
@@ -18,18 +17,20 @@
       <div class="container slide-in-elliptic-top-fwd">
         <div class="row">
           <div class="five columns centertext">
-            <h1>This is Phoenix</h1>
+            <h1>This is Zora BOT</h1>
             <button class="sp-btn" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot')"> Invite Me!</button>
           </div>
           <div class="seven columns">
             <p style="padding-top: 32px;">
-            Phoenix is the bot for everyone! With open source code, we have created a bot anyone can adapt to their own needs. Whether you just need a simple music bot, or you want to browse reddit and stackoverflow. Phoenix is the bot for you!
+            Zora is the bot for everyone! With open source code, we have created a bot anyone can adapt to their own needs. Whether you just need a simple music bot, or you want to browse reddit and stackoverflow. Zora is the bot for you!
             </p>
             <hr>
             <p>
-              Phoenix was created by <a href="http://www.averywagar.com/">Avery Wagar</a> and <a href="https://nlaha.com">Nathan Laha</a><br><br>
+              Zora was created by <a href="http://www.averywagar.com/">Avery Wagar</a> and <a href="https://nlaha.com">Nathan Laha</a><br><br>
               <button class="sp-btn-s" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button>
-              <button class="sp-btn-s" onclick="window.location.href='/#commands'">Commands</button>
+              <!-- Begin Commands -->
+              <h3>Commands:</h3>
+              <Commands command="help" permissions="Everyone" description="DMs a list of commands!"/>
             </p>
           </div>
         </div>
@@ -37,18 +38,13 @@
     </div>
     <Footer/>
     <!-- Main Landing Page content ends here -->
-
-    </div>
-    </transition>
-
   </div>
-
 
 </template>
 
 <script>
-import Footer from './components/footer.vue';
-
+import Footer from "./components/footer.vue";
+import Commands from "./components/commands.vue";
 
 // paralax background
 (function() {
@@ -72,7 +68,7 @@ import Footer from './components/footer.vue';
 // vue stuff
 export default {
   name: "app",
-  components: { Footer },
+  components: { Footer, Commands },
   data() {
     return {
       isClosed: false,
@@ -89,7 +85,7 @@ export default {
 </script>
 
 <style scoped>
-.container{
-   height: 100vh;
+.container {
+  height: 100vh;
 }
 </style>
