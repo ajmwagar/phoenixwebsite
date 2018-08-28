@@ -1,4 +1,4 @@
-# phoenixweb
+# zoraweb
 
 ## Project setup
 ```
