@@ -1,4 +1,4 @@
-![img]([zora](https://i.imgur.com/u3xOYSz.png)
+![img](https://i.imgur.com/u3xOYSz.png)
 # zoraweb
 
 
