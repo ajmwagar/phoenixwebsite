@@ -30,20 +30,20 @@
               <button class="sp-btn-s" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button>
               <!-- Begin Commands -->
               <h3>Commands:</h3>
-              <Commands command="help" permissions="Everyone" description="DMs a list of commands!"/>
+              <Commands/>
             </p>
           </div>
         </div>
       </div>
     </div>
-    <Footer/>
+    <ZFooter btntext="Dashboard" btnurl="login"/>
     <!-- Main Landing Page content ends here -->
   </div>
 
 </template>
 
 <script>
-import Footer from "./components/footer.vue";
+import ZFooter from "./components/zfooter.vue";
 import Commands from "./components/commands.vue";
 
 // paralax background
@@ -68,7 +68,7 @@ import Commands from "./components/commands.vue";
 // vue stuff
 export default {
   name: "app",
-  components: { Footer, Commands },
+  components: { ZFooter, Commands },
   data() {
     return {
       isClosed: false,
