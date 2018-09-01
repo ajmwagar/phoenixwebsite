@@ -1,4 +1,4 @@
-![img]([zora](https://cdn.discordapp.com/attachments/409929301765390336/483817646169522186/Zora.png))
+![img]([zora](https://i.imgur.com/u3xOYSz.png)
 # zoraweb
 
 
