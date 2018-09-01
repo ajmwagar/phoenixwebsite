@@ -1,4 +1,6 @@
-# phoenixweb
+![img]([zora](https://cdn.discordapp.com/attachments/409929301765390336/483817646169522186/Zora.png))
+# zoraweb
+
 
 ## Project setup
 ```
