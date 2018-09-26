@@ -10,13 +10,17 @@
             <h1>Dashboard</h1>
             <button class="sp-btn" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot')"> Invite Me!</button>
           </div>
-          <div class="seven columns">
+          <div class="seven columns" style="text-align: left;">
             <p style="padding-top: 32px;">
             Welcome to the dashboard! Here you can easily conifgure Zora bot for your server. As well as view helpful statistics!<br>
-            <h3>Select a server:</h3>
+            <h2>Select a server:</h2>
+              <select v-model="selectedValue" class="serverSelect">
+                  <option disabled value="">Please select one</option>
+                  <option v-for="item in filters" :value="item">{{item}}</option>
+              </select>
             <br>
-            <b>Stats:</b>
-              <p>
+            <h3>Stats:</h3>
+              <p class="Serveritem">
                 players:
               </p>
             </p>
@@ -32,11 +36,12 @@
 </template>
 
 <script>
-import ZFooter from "./components/zfooter.vue";
+import ZFooter from "../components/zfooter.vue";
 // vue stuff
 export default {
   name: "dash",
   components: { ZFooter },
+  props: { filters: Array, selectedValue: String },
   data() {
     return {
       isClosed: false,
@@ -44,6 +49,7 @@ export default {
       btisClosed: false
     };
   },
+  mounted() {},
   methods: {}
 };
 </script>

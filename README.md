@@ -1,6 +1,4 @@
-![img](https://i.imgur.com/u3xOYSz.png)
-# zoraweb
-
+# ZoraDashboard
 
 ## Project setup
 ```
