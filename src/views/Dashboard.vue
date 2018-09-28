@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <!-- Main landing Page content starts here!-->
-    <div class="content">
+    <div class="content" style="min-height: 200px; box-shadow: 0px -60px 00px #c55b2a;">
       <div class="container slide-in-elliptic-top-fwd">
         <div class="row">
           <div class="five columns centertext">
@@ -14,16 +14,55 @@
             <p style="padding-top: 32px;">
             Welcome to the dashboard! Here you can easily conifgure Zora bot for your server. As well as view helpful statistics!<br>
             <h2>Select a server:</h2>
+            <form>
               <select v-model="selectedValue" class="serverSelect">
-                  <option disabled value="">Please select one</option>
-                  <option v-for="item in filters" :value="item">{{item}}</option>
+                  <option class="serverlistitem" disabled value="">Please select one</option>
+                  <option class="serverlistitem" v-for="item in filters" :value="item">{{item}}</option>
               </select>
             <br>
-            <h3>Stats:</h3>
-              <p class="Serveritem">
-                players:
+            <hr>
+              <span class="toggleitem">Music Bot:</span>
+              <div class="toggle slide">
+                <input id="c" type="checkbox" />
+                <label for="c">
+                  <div class="card slide"></div>    
+                </label>
+              </div>
+
+              <br>
+
+              <span class="toggleitem">Welcome Messages:</span>
+              <div class="toggle slide">
+                <input id="d" type="checkbox" />
+                <label for="d">
+                  <div class="card slide"></div>    
+                </label>
+              </div>
+
+              <br>
+
+              <span class="toggleitem">Prefix:</span>
+              <input style="float: right; width: 75px;" class="serverSelect"></input>
+
+              <br>
+
+              <span class="toggleitem">Modlog Channel:</span>
+              <select v-model="selectedValue" class="serverSelect" style="float: right; width: 77px;">
+                <option class="serverlistitem" disabled value="">Please select one</option>
+                <option class="serverlistitem" v-for="item in filters" :value="item">{{item}}</option>
+              </select>
+
+              <br>
+              <br>
+              <input type="submit" style="float: right; font-size: 22px;" class="sp-btn" value="Save"></input>
+              <br>
+              <br>
+              <h3>Stats:</h3>
+                <p class="Serveritem">
+                  players: {{playercount}}
+                </p>
               </p>
-            </p>
+            </form>
             <hr>
           </div>
         </div>
