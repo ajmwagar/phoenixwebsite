@@ -10,6 +10,8 @@
 
 <script>
 // vue stuff
+import { CollapseTransition } from "vue2-transitions";
+
 export default {
   name: "footer",
   props: ["btntext", "btnurl"],

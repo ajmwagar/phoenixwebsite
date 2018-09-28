@@ -142,6 +142,16 @@ hr {
     overflow: hidden;
 }
 
+@media screen and (min-width: 671px) {
+    .content {}
+}
+
+@media screen and (max-width: 670px) {
+    .content {
+        width: 100%;
+    }
+}
+
 .sp-btn {
     background-color: #d6b4a4;
     color: #722424;
@@ -229,7 +239,7 @@ hr {
 .closebtn:active {
     background-color: #ffffff;
     transform: translateY(10px);
-    box-shadow: 0px 0px 0px #944520;
+    box-shadow: 0px 0px 0px #944520 !important;
     transition: 0.1s;
 }
 
@@ -242,10 +252,13 @@ hr {
 @media screen and (max-width: 670px) {
     button.closebtn {
         bottom: 120px;
-        margin-right: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom: 100px;
+        margin-right: 15px !important;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+
+    button.sp-btn-s {
+        margin-right: 120px !important;
     }
 }
 
@@ -255,11 +268,19 @@ hr {
 
 .closed {
     transform: translateY(100px);
+    opacity: 0 !important;
     transition: 1s;
+
 }
 
 .closedbutton {
+    transition: 2s;
     margin-bottom: 0px !important;
+    transform: scaleY(-1);
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    box-shadow: 0px -10px 0px #7c2b17 !important;
 }
 
 .fade-enter-active,

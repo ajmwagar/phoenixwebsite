@@ -16,7 +16,7 @@
     <div class="content">
       <div class="container slide-in-elliptic-top-fwd">
         <div class="row">
-          <div class="five columns centertext">
+          <div class="five columns centertext statusheader">
             <h1>This is Zora BOT</h1>
             <button class="sp-btn" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot')"> Invite Me!</button>
             <br>
@@ -32,7 +32,7 @@
             <hr>
             <p>
               Zora was created by <a href="http://www.averywagar.com/">Avery Wagar</a> and <a href="https://nlaha.com">Nathan Laha</a><br><br>
-              <button class="sp-btn-s" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button><button style="margin-top: 22px;" class="sp-btn-s" onclick="window.open('https://discordbots.org/bot/478616471640080395/vote')">Vote for us!</button>
+              <button style="margin-right:20px; margin-left:20px;" class="sp-btn" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button><button style="margin-top: 22px; margin-right:20px; margin-left:20px;" class="sp-btn" onclick="window.open('https://discordbots.org/bot/478616471640080395/vote')">Vote for us!</button>
             </p>
           </div>
         </div>
