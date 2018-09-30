@@ -39,6 +39,16 @@
 
               <br>
 
+              <span class="toggleitem">Game Stats:</span>
+              <div class="toggle slide">
+                <input v-model="GamestatState" id="f" type="checkbox" />
+                <label for="f">
+                  <div class="card slide"></div>    
+                </label>
+              </div>
+
+              <br>
+
               <span class="toggleitem">Modlog:</span>
               <div class="toggle slide">
                 <input v-model="ModlogState" id="e" type="checkbox" />
@@ -96,7 +106,8 @@ export default {
     Modlog: String,
     MusicBotState: Boolean,
     WelcomeMessageState: Boolean,
-    ModlogState: Boolean
+    ModlogState: Boolean,
+    GamestatState: Boolean
   },
   data() {
     return {
@@ -118,6 +129,7 @@ export default {
       this.MusicBotState = !values.musicstate;
       this.WelcomeMessageState = !values.welcomestate;
       this.ModlogState = !values.modlogstate;
+      this.GamestatState = !values.gamestats;
       this.playercount = values.playercount;
     }
   },
@@ -135,7 +147,8 @@ export default {
         welcomes: !this.WelcomeMessageState,
         modules: {
           music: !this.MusicBotState,
-          modlog: !this.ModlogState
+          modlog: !this.ModlogState,
+          gamestats: !this.GamestatState
         }
       };
       this.$socket.emit("SaveCFG", token, this.selectedValue, newconfig);
