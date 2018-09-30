@@ -69,12 +69,17 @@
 
               <br>
               <br>
-              <button v-on:click="Save" style="float: right; font-size: 22px;" class="sp-btn">Save</button>
+              <button v-on:click="Save" style="padding-bottom: 40px; float: right; font-size: 22px;" class="sp-btn">Save</button>
               <br>
               <br>
               <h3>Stats:</h3>
                 <p class="Serveritem">
-                  players: {{ playercount }}
+                  Total Users: <span class="cArgs">{{ playercount }}</span>
+                  <br>
+                  Richest Person: <span class="cArgs">{{ richestPerson.name }}</span>
+                  <br>
+                  <li>Zcoins: <span class="cArgs">{{richestPerson.zcoins}}</span></li>
+                  <li>Level: <span class="cArgs">{{richestPerson.level}}</span></li>
                 </p>
               </p>
             <hr>
@@ -107,7 +112,17 @@ export default {
     MusicBotState: Boolean,
     WelcomeMessageState: Boolean,
     ModlogState: Boolean,
-    GamestatState: Boolean
+    GamestatState: Boolean,
+    richestPerson: {
+      type: Object,
+      default: function() {
+        return {
+          name: "DekuTree ruler of the robotic overlords!",
+          zcoins: 120000000000000,
+          level: 3252352300000000
+        };
+      }
+    }
   },
   data() {
     return {
@@ -131,6 +146,10 @@ export default {
       this.ModlogState = !values.modlogstate;
       this.GamestatState = !values.gamestats;
       this.playercount = values.playercount;
+      // Richest Person
+      this.richestPerson.name = values.richestPerson.name;
+      this.richestPerson.zcoins = values.richestPerson.zcoins;
+      this.richestPerson.level = values.richestPerson.level;
     }
   },
   mounted() {},

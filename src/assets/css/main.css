@@ -7,6 +7,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow|Oswald');
 
+li {
+    font-size: 22px;
+    font-family: 'Archivo Narrow',
+        sans-serif;
+    padding-left: 42px;
+}
+
 body {
     background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
@@ -410,6 +417,7 @@ input[type="submit"]:active {
 
 .Serveritem {
     padding-left: 25px;
+    margin-bottom: 0px;
 }
 
 .serverlistitem {
