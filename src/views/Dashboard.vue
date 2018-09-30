@@ -117,6 +117,7 @@ export default {
       this.Prefix = values.prefix;
       this.MusicBotState = values.musicstate;
       this.WelcomeMessageState = values.welcomestate;
+      this.ModlogState = values.welcomestate;
       this.playercount = values.playercount;
     }
   },
@@ -131,7 +132,11 @@ export default {
       var newconfig = {
         prefix: this.Prefix,
         modlogChannel: this.Modlog,
-        welcomes: this.welcomestate
+        welcomes: this.welcomestate,
+        modules: {
+          music: this.musicstate,
+          modlog: this.ModlogState
+        }
       };
       this.$socket.emit("SaveCFG", token, this.selectedValue, newconfig);
     }
