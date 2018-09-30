@@ -115,9 +115,9 @@ export default {
     updateValues: function(values) {
       this.Modlog = values.channel;
       this.Prefix = values.prefix;
-      this.MusicBotState = values.musicstate;
-      this.WelcomeMessageState = values.welcomestate;
-      this.ModlogState = values.welcomestate;
+      this.MusicBotState = !values.musicstate;
+      this.WelcomeMessageState = !values.welcomestate;
+      this.ModlogState = !values.welcomestate;
       this.playercount = values.playercount;
     }
   },
