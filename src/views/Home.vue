@@ -1,6 +1,4 @@
-<template>
-  <div id="app">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<template> <div id="app"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <!-- Main landing Page content starts here!-->
     <div class="container" style="height: 100vh;">
@@ -27,9 +25,8 @@
           </div>
           <div class="seven columns">
             <p style="padding-top: 32px;">
-            Zora is the bot for everyone! With open source code, we have created a bot anyone can adapt to their own needs. Whether you just need a simple music bot, or you want to browse Reddit and Stack Overflow. Zora is the bot for you!
+              Zora is the most flexible and easy to use bot available to manage your Discord Server! Actively maintained and constantly being improved, our bot offers many unique features. Whether you just need a simple music bot, or you want to browse Reddit and StackOverflow from the comfort of your Discord server, Zora is the bot for you!
             </p>
-            <hr>
             <p>
               Zora was created by <a href="https://averywagar.com/">Avery Wagar</a> and <a href="https://nlaha.com">Nathan Laha</a><br><br>
               <button style="margin-right:20px; margin-left:20px;" class="sp-btn" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button><button style="margin-top: 22px; margin-right:20px; margin-left:20px;" class="sp-btn" onclick="window.open('https://discordbots.org/bot/478616471640080395/vote')">Vote for us!</button>

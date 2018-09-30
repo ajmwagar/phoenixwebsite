@@ -12,7 +12,7 @@
           </div>
           <div class="seven columns" style="text-align: left;">
             <p style="padding-top: 32px;">
-            Welcome to the dashboard! Here you can easily conifgure Zora bot for your server. As well as view helpful statistics!<br>
+            Welcome to the dashboard! Here you can easily configure Zora bot for your server. As well as view helpful statistics!<br>
             <h2>Select a server:</h2>
               <select v-model="selectedValue" v-on:change="onChange" class="serverSelect">
                   <option class="serverlistitem" v-for="item in filters" :value="item.id">{{item.name}}</option>
