@@ -117,7 +117,7 @@ export default {
       this.Prefix = values.prefix;
       this.MusicBotState = !values.musicstate;
       this.WelcomeMessageState = !values.welcomestate;
-      this.ModlogState = !values.welcomestate;
+      this.ModlogState = !values.modlogstate;
       this.playercount = values.playercount;
     }
   },
