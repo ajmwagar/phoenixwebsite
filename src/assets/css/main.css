@@ -390,11 +390,22 @@ input[type="submit"]:active {
 
 .serverSelect {
     background-color: #dbdbdb;
+    height: 39px;
+    overflow: hidden;
+    width: 240px;
+    border: 1px solid #ff7300;
+    border-radius: 2px;
+    font-size: 22px;
+}
+
+.modSelect {
+    background-color: #dbdbdb;
     height: 29px;
     overflow: hidden;
     width: 240px;
     border: 1px solid #ff7300;
     border-radius: 2px;
+    font-size: 12px;
 }
 
 .Serveritem {

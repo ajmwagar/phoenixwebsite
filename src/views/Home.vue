@@ -46,7 +46,7 @@
           />
       </div>
     </div>
-    <ZFooter btntext="Dashboard" btnurl="api/discord/login"/>
+    <ZFooter btntext="Dashboard" btnurl="https://dta.dekutree.org/api/discord/login"/>
     <!-- Main Landing Page content ends here -->
   </div>
 
@@ -55,6 +55,8 @@
 <script>
 import ZFooter from "../components/zfooter.vue";
 import Commands from "../components/commands.vue";
+import VueAxios from "vue-axios";
+import axios from "axios";
 
 // paralax background
 (function() {

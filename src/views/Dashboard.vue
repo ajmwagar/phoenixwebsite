@@ -14,16 +14,14 @@
             <p style="padding-top: 32px;">
             Welcome to the dashboard! Here you can easily conifgure Zora bot for your server. As well as view helpful statistics!<br>
             <h2>Select a server:</h2>
-            <form>
-              <select v-model="selectedValue" class="serverSelect">
-                  <option class="serverlistitem" disabled value="">Please select one</option>
-                  <option class="serverlistitem" v-for="item in filters" :value="item">{{item}}</option>
+              <select v-model="selectedValue" v-on:change="onChange" class="serverSelect">
+                  <option class="serverlistitem" v-for="item in filters" :value="item.id">{{item.name}}</option>
               </select>
             <br>
             <hr>
               <span class="toggleitem">Music Bot:</span>
               <div class="toggle slide">
-                <input id="c" type="checkbox" />
+                <input v-model="MusicBotState" id="c" type="checkbox" />
                 <label for="c">
                   <div class="card slide"></div>    
                 </label>
@@ -33,7 +31,7 @@
 
               <span class="toggleitem">Welcome Messages:</span>
               <div class="toggle slide">
-                <input id="d" type="checkbox" />
+                <input v-model="WelcomeMessageState" id="d" type="checkbox" />
                 <label for="d">
                   <div class="card slide"></div>    
                 </label>
@@ -42,33 +40,29 @@
               <br>
 
               <span class="toggleitem">Prefix:</span>
-              <input style="float: right; width: 75px;" class="serverSelect"></input>
+              <input v-model="Prefix" style="float: right; width: 75px;" class="modSelect"></input>
 
               <br>
 
               <span class="toggleitem">Modlog Channel:</span>
-              <select v-model="selectedValue" class="serverSelect" style="float: right; width: 77px;">
-                <option class="serverlistitem" disabled value="">Please select one</option>
-                <option class="serverlistitem" v-for="item in filters" :value="item">{{item}}</option>
-              </select>
+              <input v-model="Modlog" style="float: right; width: 75px;" class="modSelect"></input>
 
               <br>
               <br>
-              <input type="submit" style="float: right; font-size: 22px;" class="sp-btn" value="Save"></input>
+              <button v-on:click="Save" style="float: right; font-size: 22px;" class="sp-btn">Save</button>
               <br>
               <br>
               <h3>Stats:</h3>
                 <p class="Serveritem">
-                  players: {{playercount}}
+                  players: {{ playercount }}
                 </p>
               </p>
-            </form>
             <hr>
           </div>
         </div>
       </div>
     </div>
-    <ZFooter btntext="Logout" btnurl="home"/>
+    <ZFooter btntext="Logout" btnurl="/"/>
     <!-- Main Landing Page content ends here -->
   </div>
 
@@ -76,11 +70,23 @@
 
 <script>
 import ZFooter from "../components/zfooter.vue";
+import VueAxios from "vue-axios";
+import axios from "axios";
+import VueSocketio from "vue-socket.io";
+
 // vue stuff
 export default {
   name: "dash",
   components: { ZFooter },
-  props: { filters: Array, selectedValue: String },
+  props: {
+    playercount: Number,
+    filters: Array,
+    selectedValue: String,
+    Prefix: String,
+    Modlog: String,
+    MusicBotState: Boolean,
+    WelcomeMessageState: Boolean
+  },
   data() {
     return {
       isClosed: false,
@@ -88,8 +94,48 @@ export default {
       btisClosed: false
     };
   },
+  sockets: {
+    connect: function() {
+      console.log("Socket Connected!");
+    },
+    updateServers: function(ownedservers) {
+      this.filters = ownedservers;
+    },
+    updateChannel: function(channel) {
+      this.Modlog = channel;
+      this.Prefix = prefix;
+    },
+    updatePrefix: function(prefix) {
+      this.Prefix = prefix;
+      this.MusicBotState = musicstate;
+    },
+    updateWelcome: function(welcomestate) {
+      this.WelcomeMessageState = welcomestate;
+    },
+    updatePlayercount: function(playercount) {
+      this.playercount = playercount;
+    }
+  },
   mounted() {},
-  methods: {}
+  methods: {
+    onChange: function(event) {
+      var token = this.$route.query.token;
+      this.$socket.emit("getChannels", token, this.selectedValue);
+    },
+    Save: function(event) {
+      var token = this.$route.query.token;
+      var newconfig = {
+        prefix: this.Prefix,
+        modlogChannel: this.Modlog,
+        welcomes: this.welcomestate
+      };
+      this.$socket.emit("SaveCFG", token, this.selectedValue, newconfig);
+    }
+  },
+  beforeMount() {
+    var token = this.$route.query.token;
+    this.$socket.emit("getServers", token);
+  }
 };
 </script>
 

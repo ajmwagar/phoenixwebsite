@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <button class="closebtn" v-on:click="isClosed = !isClosed" v-bind:class="{ closedbutton: isClosed }"><i class="material-icons">keyboard_arrow_down</i></button>
   <footer class="mainfooter" v-bind:class="{ closed: isClosed }">
-    <a href="https://dta.dekutree.org/api/discord/login"><button class="sp-btn-s" v-on:click="dshow = !dshow" v-bind:class="{ closed: isClosed }">{{btntext}}</button></a>
+    <a v-bind:href="btnurl"><button class="sp-btn-s" v-on:click="dshow = !dshow" v-bind:class="{ closed: isClosed }">{{btntext}}</button></a>
   </footer>
   </div>
 </template>
