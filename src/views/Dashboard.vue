@@ -132,10 +132,10 @@ export default {
       var newconfig = {
         prefix: this.Prefix,
         modlogChannel: this.Modlog,
-        welcomes: this.welcomestate,
+        welcomes: !this.WelcomeMessageState,
         modules: {
-          music: this.musicstate,
-          modlog: this.ModlogState
+          music: !this.MusicBotState,
+          modlog: !this.ModlogState
         }
       };
       this.$socket.emit("SaveCFG", token, this.selectedValue, newconfig);
