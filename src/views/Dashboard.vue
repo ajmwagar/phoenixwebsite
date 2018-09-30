@@ -39,6 +39,16 @@
 
               <br>
 
+              <span class="toggleitem">Modlog:</span>
+              <div class="toggle slide">
+                <input v-model="ModlogState" id="e" type="checkbox" />
+                <label for="e">
+                  <div class="card slide"></div>    
+                </label>
+              </div>
+
+              <br>
+
               <span class="toggleitem">Prefix:</span>
               <input v-model="Prefix" style="float: right; width: 75px;" class="modSelect"></input>
 
@@ -85,7 +95,8 @@ export default {
     Prefix: String,
     Modlog: String,
     MusicBotState: Boolean,
-    WelcomeMessageState: Boolean
+    WelcomeMessageState: Boolean,
+    ModlogState: Boolean
   },
   data() {
     return {
@@ -101,19 +112,12 @@ export default {
     updateServers: function(ownedservers) {
       this.filters = ownedservers;
     },
-    updateChannel: function(channel) {
-      this.Modlog = channel;
-      this.Prefix = prefix;
-    },
-    updatePrefix: function(prefix) {
-      this.Prefix = prefix;
-      this.MusicBotState = musicstate;
-    },
-    updateWelcome: function(welcomestate) {
-      this.WelcomeMessageState = welcomestate;
-    },
-    updatePlayercount: function(playercount) {
-      this.playercount = playercount;
+    updateValues: function(values) {
+      this.Modlog = values.channel;
+      this.Prefix = values.prefix;
+      this.MusicBotState = values.musicstate;
+      this.WelcomeMessageState = values.welcomestate;
+      this.playercount = values.playercount;
     }
   },
   mounted() {},
