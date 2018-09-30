@@ -27,7 +27,7 @@
           </div>
           <div class="seven columns">
             <p style="padding-top: 32px;">
-            Zora is the bot for everyone! With open source code, we have created a bot anyone can adapt to their own needs. Whether you just need a simple music bot, or you want to browse reddit and stackoverflow. Zora is the bot for you!
+            Zora is the bot for everyone! Using open source code, our bot offers many unique features. Whether you just need a simple music bot, or you want to browse Reddit and StackOverflow. Zora is the bot for you!
             </p>
             <hr>
             <p>
