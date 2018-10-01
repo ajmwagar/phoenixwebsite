@@ -1,7 +1,7 @@
 <template> <div id="app"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <!-- Main landing Page content starts here!-->
-    <div class="container" style="height: 100vh;">
+    <div class="container" style="height: 100%;">
       <div class="row">
           <div class="column">
             <img 
