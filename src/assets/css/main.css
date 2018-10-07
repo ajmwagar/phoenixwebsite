@@ -18,10 +18,15 @@ body {
     background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
     background-color: #c55b2a;
+    background-size: 220vh;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
+}
+
+.maintitleHeader {
+    font-size: 80px;
 }
 
 h2 {
@@ -278,6 +283,12 @@ input[type="submit"]:active {
     z-index: 1;
 }
 
+.closebtn::after {
+    font-family: "Material Icons";
+    content: "keyboard_arrow_down";
+
+}
+
 .closebtn:hover {
     background-color: #d6b4a4;
     color: rgb(122, 54, 54);
@@ -314,6 +325,26 @@ input[type="submit"]:active {
     text-align: center;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff5100;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffa880;
+}
+
 .closed {
     transform: translateY(100px);
     opacity: 0 !important;
@@ -322,13 +353,13 @@ input[type="submit"]:active {
 }
 
 .closedbutton {
-    transition: 2s;
     margin-bottom: 0px !important;
-    transform: scaleY(-1);
-    -moz-transform: scaleY(-1);
-    -webkit-transform: scaleY(-1);
-    -ms-transform: scaleY(-1);
-    box-shadow: 0px -10px 0px #7c2b17 !important;
+
+}
+
+.closedbutton::after {
+    font-family: "Material Icons";
+    content: "keyboard_arrow_up";
 }
 
 .fade-enter-active,
