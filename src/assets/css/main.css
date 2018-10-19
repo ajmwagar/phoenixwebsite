@@ -18,7 +18,7 @@ body {
     background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
     background-color: #c55b2a;
-    background-size: 230vh;
+    background-size: 220vh;
 }
 
 h1 {
@@ -191,17 +191,20 @@ input[type="submit"]:active {
     font-size: 2.5rem;
     padding-top: 170px;
     display: block;
-    min-height: 2300px;
+    min-height: 2570px;
     overflow: hidden;
 }
 
-@media screen and (min-width: 671px) {
-    .content {}
+@media screen and (min-width: 980px) {
+    .content {
+        min-height: 2570px;
+    }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 979px) {
     .content {
         width: 100%;
+        min-height: 3370px;
     }
 }
 
