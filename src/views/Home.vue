@@ -1,4 +1,6 @@
-<template> <div id="app"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<template> 
+  <div id="app">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <!-- Main landing Page content starts here!-->
     <div class="container" style="height: 100%;">
@@ -97,22 +99,22 @@ export default {
           value: "Show a help menu"
         },
         {
-          title: "+ban <span class='cArgs'>[user]</span",
+          title: "+ban <span class='cArgs'>[user]</span>",
           category: "Admin",
           value: "Ban a user (admins only)"
         },
         {
-          title: "+setlog <span class='cArgs'>[channel]</span",
+          title: "+setlog <span class='cArgs'>[channel]</span>",
           category: "Admin",
           value: "Set channel for modlog"
         },
         {
-          title: "+kick <span class='cArgs'>[user]</span",
+          title: "+kick <span class='cArgs'>[user]</span>",
           category: "Admin",
           value: "Kick a user (admins and mods only)"
         },
         {
-          title: "+purge <span class='cArgs'>[number of messages]</span",
+          title: "+purge <span class='cArgs'>[number of messages]</span>",
           category: "Admin",
           value: "Purge a channel"
         },
@@ -122,12 +124,12 @@ export default {
           value: "List banned words for automod"
         },
         {
-          title: "+addbw <span class='cArgs'>[words]</span",
+          title: "+addbw <span class='cArgs'>[words]</span>",
           category: "Admin",
           value: "Add words to ban list"
         },
         {
-          title: "+removebw <span class='cArgs'>[words]</span",
+          title: "+removebw <span class='cArgs'>[words]</span>",
           category: "Admin",
           value: "Remove words from ban list"
         },
@@ -137,7 +139,7 @@ export default {
           value: "Pong?"
         },
         {
-          title: "+say <span class='cArgs'>[message]</span",
+          title: "+say <span class='cArgs'>[message]</span>",
           category: "Admin",
           value: "Say a message"
         },
@@ -150,10 +152,10 @@ export default {
           title: "+alexamode",
           category: "Admin",
           value:
-            "Changes the prefix to Alexa <span class='cArgs'>[command]</span"
+            "Changes the prefix to Alexa <span class='cArgs'>[command]</span>"
         },
         {
-          title: "+weather <span class='cArgs'>[city]</span",
+          title: "+weather <span class='cArgs'>[city]</span>",
           category: "Utility",
           value: "Get the weather for a city"
         },
@@ -163,17 +165,17 @@ export default {
           value: "Tell a joke"
         },
         {
-          title: "+yoda <span class='cArgs'>[message]</span",
+          title: "+yoda <span class='cArgs'>[message]</span>",
           category: "Utility",
           value: "Translates your message to yodaspeak!"
         },
         {
-          title: "+stack <span class='cArgs'>[search query]</span",
+          title: "+stack <span class='cArgs'>[search query]</span>",
           category: "Utility",
           value: "Searches stack overflow"
         },
         {
-          title: "+dice <span class='cArgs'>[number of sides]</span",
+          title: "+dice <span class='cArgs'>[number of sides]</span>",
           category: "Utility",
           value: "Roles a dice with a number of sides"
         },
@@ -184,7 +186,7 @@ export default {
         },
         {
           title:
-            "+math <span class='cArgs'>[number1]</span <span class='cArgs'>[operator]</span <span class='cArgs'>[number2]</span",
+            "+math <span class='cArgs'>[number1]</span><span class='cArgs'>[operator]</span><span class='cArgs'>[number2]</span>",
           category: "Utility",
           value:
             "Does basic math operations. Gets pissed off if you divide by 0"
@@ -196,24 +198,24 @@ export default {
         },
         {
           title:
-            "+translate <span class='cArgs'>[language code]</span <span class='cArgs'>[input text]</span",
+            "+translate <span class='cArgs'>[language code]</span><span class='cArgs'>[input text]</span>",
           category: "Utility",
           value:
             "Translate's input to specified language, for a list of ISO 639-1 codes go to: <a href='https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes'>wikipedia</a>"
         },
         {
           title:
-            "+currency <span class='cArgs'>[to]</span <span class='cArgs'>[from]</span (Example: BTC USD)",
+            "+currency <span class='cArgs'>[to]</span><span class='cArgs'>[from]</span>(Example: BTC USD)",
           category: "Utility",
           value: "Gets and compares currency prices"
         },
         {
-          title: "+wolfram <span class='cArgs'>[search]</span",
+          title: "+wolfram <span class='cArgs'>[search]</span>",
           category: "Utility",
           value: "Searches Wolfram Alpha"
         },
         {
-          title: "+bug <span class='cArgs'>[description]</span",
+          title: "+bug <span class='cArgs'>[description]</span>",
           category: "Utility",
           value: "Report a bug"
         },
@@ -231,6 +233,12 @@ export default {
           title: "+support",
           category: "Utility",
           value: "Join our support server."
+        },
+        {
+          title: "+xkcd <span class='cArgs'>[comic number / random]</span>",
+          category: "Utility",
+          value:
+            "Shows you the current XKCD comic, or a random/specific one if specified"
         },
         {
           title: "+daily",
