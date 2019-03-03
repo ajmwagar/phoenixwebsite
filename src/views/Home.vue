@@ -1,16 +1,12 @@
-<template> 
+<template>
   <div id="app">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Main landing Page content starts here!-->
     <div class="container" style="height: 100%;">
       <div class="row">
-          <div class="column">
-            <img 
-              src="../assets/ZoraWeb.svg" 
-              alt="ZoraBOT"
-              style="width: 100%;" />
-          </div>
+        <div class="column">
+          <img src="../assets/ZoraWeb.svg" alt="ZoraBOT" style="width: 100%;">
+        </div>
       </div>
     </div>
     <div class="overlay"></div>
@@ -19,20 +15,44 @@
         <div class="row">
           <div class="five columns centertext" style="margin-right: 0px;">
             <h1 class="maintitleHeader">Meet Zora.</h1>
-            <button class="sp-btn" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot')"> Invite Me!</button>
+            <button
+              class="sp-btn"
+              onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=478616471640080395&permissions=8&scope=bot')"
+            >Invite Me!</button>
             <br>
             <hr>
-            <a href="https://discordbots.org/bot/478616471640080395" >
-              <img src="https://discordbots.org/api/widget/478616471640080395.svg" alt="Zora" />
+            <a href="https://discordbots.org/bot/478616471640080395">
+              <img src="https://discordbots.org/api/widget/478616471640080395.svg" alt="Zora">
+            </a>
+            <a href="https://discordbotlist.com/bots/478616471640080395">
+              <img
+                width="301"
+                height="111"
+                src="https://discordbotlist.com/bots/478616471640080395/widget"
+                alt="Zora stats on Discord Bot List"
+              >
             </a>
           </div>
           <div class="seven columns">
-            <p style="padding-top: 32px;">
-              Zora is the most flexible and easy to use bot available to manage your Discord Server! Actively maintained and constantly being improved, our bot offers many unique features. Whether you just need a simple music bot, or you want to browse Reddit and StackOverflow from the comfort of your Discord server, Zora is the bot for you!
-            </p>
+            <p
+              style="padding-top: 32px;"
+            >Zora is the most flexible and easy to use bot available to manage your Discord Server! Actively maintained and constantly being improved, our bot offers many unique features. Whether you just need a simple music bot, or you want to browse Reddit and StackOverflow from the comfort of your Discord server, Zora is the bot for you!</p>
             <p>
-              Zora was created by <a href="https://averywagar.com/">Avery Wagar</a> and <a href="https://nlaha.com">Nathan Laha</a><br><br>
-              <button style="margin-right:20px; margin-left:20px;" class="sp-btn" onclick="window.open('https://github.com/ajmwagar/discordbot')">Source Code</button><button style="padding-left: 46px; padding-right: 46px; margin-top: 28px; margin-right:20px; margin-left:20px;" class="sp-btn" onclick="window.open('https://discordbots.org/bot/478616471640080395/vote')">Vote for us!</button>
+              Zora was created by
+              <a href="https://averywagar.com/">Avery Wagar</a> and
+              <a href="https://nlaha.com">Nathan Laha</a>
+              <br>
+              <br>
+              <button
+                style="margin-right:20px; margin-left:20px;"
+                class="sp-btn"
+                onclick="window.open('https://github.com/ajmwagar/discordbot')"
+              >Source Code</button>
+              <button
+                style="padding-left: 46px; padding-right: 46px; margin-top: 28px; margin-right:20px; margin-left:20px;"
+                class="sp-btn"
+                onclick="window.open('https://discordbots.org/bot/478616471640080395/vote')"
+              >Vote for us!</button>
             </p>
           </div>
         </div>
@@ -41,15 +61,12 @@
         <!-- Begin Commands -->
         <hr>
         <h2>Commands</h2>
-          <Commands 
-            :items="commandlist"
-          />
+        <Commands :items="commandlist"/>
       </div>
     </div>
     <ZFooter btntext="Dashboard" btnurl="https://dta.dekutree.org/api/discord/login"/>
     <!-- Main Landing Page content ends here -->
   </div>
-
 </template>
 
 <script>
