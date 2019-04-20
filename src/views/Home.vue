@@ -64,7 +64,7 @@
         <Commands :items="commandlist"/>
       </div>
     </div>
-    <ZFooter btntext="Dashboard" btnurl="https://dta.dekutree.org:445/api/discord/login"/>
+    <ZFooter btntext="Dashboard" btnurl="https://dta.dekutree.org:448/api/discord/login"/>
     <!-- Main Landing Page content ends here -->
   </div>
 </template>
